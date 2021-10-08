@@ -1,0 +1,17 @@
+; This is a rasm assembly language file. It pulls in the sources
+; for the music, the config and the player, all from by Arkos Tracker 2,
+; in that order.
+; The music and config should be exported using AT2's export-as-source
+; facility. The player source is in AT2's players/*/sources directory.
+; Make sure the ORG here is the same as the one you specify in AT2's
+; export dialog. It's the music data which lands at that origin.
+; This is assembled into a binary blob.
+
+  org #C000     ;This is the fixed address of the player/music
+PlayerAndMusicBinary_Start
+  include "hocuspocus_src/hocuspocus.asm"
+  include "hocuspocus_src/hocuspocus_playerconfig.asm"
+
+PLY_AKG_HARDWARE_SPECTRUM = 1
+  include "PlayerAkg.asm"  ;It works for any other player.
+PlayerAndMusicBinary_End
