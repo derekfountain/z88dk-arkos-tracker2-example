@@ -1,6 +1,6 @@
 # You need rasm.exe in your PATH
 #
-RASM=/home/jorgegv/src/spectrum/rasm/rasm.exe
+RASM=rasm.exe
 
 all : arkos.tap
 
